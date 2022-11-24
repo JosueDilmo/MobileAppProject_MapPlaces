@@ -50,3 +50,5 @@ Places data was taken from [MACMORRIS](https://macmorris.maynoothuniversity.ie/)
 Use [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to obtain he great-circle Distance between two points on a sphere given their longitudes and latitudes.
 
 ## Reference
+[Expo Documentation](https://docs.expo.dev/)
+[React Native Documentation](https://reactnative.dev/docs/)
