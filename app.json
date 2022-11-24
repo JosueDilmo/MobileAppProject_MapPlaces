@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "MobileAppProject_MapPlaces",
+    "slug": "MobileAppProject_MapPlaces",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
