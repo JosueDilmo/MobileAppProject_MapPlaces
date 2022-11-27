@@ -62,3 +62,4 @@ Use [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to obta
 [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)<br>
 [Adrian Twarog - React Navigation](https://www.youtube.com/watch?v=gJX8plp4_sc)<br>
 [Adrian Twarog - React Native Maps](https://www.youtube.com/watch?v=4qq0GQPkfjI&t=1010s)<br>
+[Mosh Hamedani - Fetch API](https://programmingwithmosh.com/react-native/make-api-calls-in-react-native-using-fetch/)<br>
