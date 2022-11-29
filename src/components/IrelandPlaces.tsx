@@ -1,4 +1,3 @@
-// FETCH DATA FROM URL AND DISPLAY ON MAP
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native';
@@ -7,12 +6,12 @@ import GetMarkColor from './MarkColor';
 
 const API_PLACES_URL = 'https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/places.json';
 
-// HOLDS PLACE DATA
 export default function IrelandMarkers() {
+    // HOLDS PLACE DATA
     const [places, setPlaces] = useState([]);
-    const navigation = useNavigation();
-
-    // FETCH PLACES FROM URL
+    const navigation = useNavigation(); //REACT NAVIGATION DOCUMENTATION
+    
+    // FETCH DATA FROM URL AND DISPLAY ON MAP
     useEffect(() => {
         fetch(API_PLACES_URL)
         .then(res => res.json())
