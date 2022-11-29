@@ -1,11 +1,12 @@
 // LOAD IRELAND MAP TO SCREEN
-import { StyleSheet, Text, View } from 'react-native';
-import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
 import MapView from 'react-native-maps';
 import IrelandMarkers from './IrelandPlaces';
 
 // IRELAND MAP OVER DUBLIN W/ IrelandMarkers
-function IrelandMap() {
+export default function IrelandMap() {
+  
     return (
         <View style={styles.container}>
         <MapView
@@ -15,14 +16,13 @@ function IrelandMap() {
             longitude: -6.266155,
             latitudeDelta: 0.1,
             longitudeDelta: 0.1,
-          }}
-          ><IrelandMarkers />
+          }} //IRELANDPLACES COMPONENT -> IRELAND MAKERS
+          >
+          <IrelandMarkers/>
         </MapView>
       </View>
     )
   }
-
-  export default IrelandMap;
 
   // MAP DEFAULT STYLE 
   const styles = StyleSheet.create({
@@ -34,6 +34,3 @@ function IrelandMap() {
         ...StyleSheet.absoluteFillObject,
       },
   });
-
-
-  //TODO CALLOUT WHEN MARKER IS CLICKED TO DETAILS SCREEN
