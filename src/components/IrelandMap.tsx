@@ -16,9 +16,8 @@ export default function IrelandMap() {
             longitude: -6.266155,
             latitudeDelta: 0.1,
             longitudeDelta: 0.1,
-          }} //IRELANDPLACES COMPONENT -> IRELAND MAKERS
-          >
-          <IrelandMarkers/>
+          }} //IRELANDPLACES COMPONENT -> IRELAND MARKERS
+          ><IrelandMarkers/>
         </MapView>
       </View>
     )

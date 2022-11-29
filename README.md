@@ -23,7 +23,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
 
 - <b>Show extended information<br></b>
 
-  - [ ] When the pop up info window is tapped, show in full screen all details of the place (id, name, Gaelic name, type, GPS coordinates).<br>
+  - [x] When the pop up info window is tapped, show in full screen all details of the place (id, name, Gaelic name, type, GPS coordinates).<br>
   - [ ] Show the image of the place loaded from the internet\*\*<br>
         [ ][bonus] Show relevant image using any free web service, or search engine.<br>
   - [ ] Show a back button, when pressed, go back to map view.<br>

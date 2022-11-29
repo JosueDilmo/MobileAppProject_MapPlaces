@@ -18,12 +18,12 @@ export default function App() {
         <Tab.Screen options={{
             tabBarIcon: ({ color }) => <Icon name="map" size={30} color= {color} />
           }}
-        name="Map" component={IrelandMap} />
+        name="Ireland Map" component={IrelandMap} />
 
         <Tab.Screen options={{
             tabBarIcon: ({ color }) => <Icon name="map-marker" size={30} color= {color} />
           }}
-        name="Places" component={Details} />
+        name="Details" component={Details} />
 
       </Tab.Navigator>
     </NavigationContainer>
