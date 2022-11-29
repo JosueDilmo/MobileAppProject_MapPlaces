@@ -16,7 +16,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
 
 - <b>Display markers on the map</b><br>
 
-  - [x] Load places and place types <i>JSON data\*.</i><br>
+  - [x] Load places and place types <i>JSON data.</i><br>
   - [x] Display marker for all places using GPS coordinates.<br>
   - [x] Use different colours, one for each place type.<br>
   - [x] When marker is tapped, place name should be displayed on a pop-up info window.<br>
