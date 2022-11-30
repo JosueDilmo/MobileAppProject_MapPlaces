@@ -25,7 +25,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
 
   - [x] When the pop up info window is tapped, show in full screen all details of the place (id, name, Gaelic name, type, GPS coordinates).<br>
   - [ ] Show the image of the place loaded from the internet\*\*<br>
-  - [ ][bonus] Show relevant image using any free web service, or search engine.<br>
+  - [ ] [bonus] Show relevant image using any free web service, or search engine.<br>
   - [ ] Show a back button, when pressed, go back to map view.<br>
 
 - <b>Allow filtering by Place Type </b><br>
@@ -37,7 +37,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
   - [ ] Long Press anywhere on map to show a draggable marker.<br>
   - [ ] Show distance\*\*\* to the nearest place (from the downloaded data), and on drag marker, update this info.<br>
   - [ ] Draw a semi-transparent blue circle around this marker with a radius of 10 km and show number of places within this radius. <br>
-  - [ ][bonus] Create a slider to control the above radius in km (1-1000, default 10) and on change, update the circle on the map and update number of places within the radius info shown accordingly.<br>
+  - [ ] [bonus] Create a slider to control the above radius in km (1-1000, default 10) and on change, update the circle on the map and update number of places within the radius info shown accordingly.<br>
 
 <b>URLs:</b>
 
