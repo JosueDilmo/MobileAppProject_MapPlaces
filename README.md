@@ -24,9 +24,9 @@ The objective of this project is to develop a mobile app to showcase in map plac
 - <b>Show extended information<br></b>
 
   - [x] When the pop up info window is tapped, show in full screen all details of the place (id, name, Gaelic name, type, GPS coordinates).<br>
-  - [ ] Show the image of the place loaded from the internet\*\*<br>
+  - [x] Show the image of the place loaded from the internet\*\*<br>
   - [ ] [bonus] Show relevant image using any free web service, or search engine.<br>
-  - [ ] Show a back button, when pressed, go back to map view.<br>
+  - [x] Show a back button, when pressed, go back to map view.<br>
 
 - <b>Allow filtering by Place Type </b><br>
 
@@ -68,3 +68,5 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 [Adrian Twarog - React Navigation](https://www.youtube.com/watch?v=gJX8plp4_sc)<br>
 [Adrian Twarog - React Native Maps](https://www.youtube.com/watch?v=4qq0GQPkfjI&t=1010s)<br>
 [Mosh Hamedani - Fetch API](https://programmingwithmosh.com/react-native/make-api-calls-in-react-native-using-fetch/)<br>
+[Unsplash Documentation](https://unsplash.com/documentation)<br>
+[Random Photos website](https://picsum.photos/)<br>

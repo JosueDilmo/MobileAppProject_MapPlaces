@@ -1,14 +1,17 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Text, View } from "react-native";
+import { Button, Image, StyleSheet, Text, View } from "react-native";
 import GetPlaceTypeName from "../utils/PlaceType";
 
 // DETAILS SCREEN FOR EACH MARKER SELECTED
 // REACT NAVIGATION DOCUMENTATION HELPED ME OUT IN HERE
 export default function DetailScreen({ route }) {
+  const navigation = useNavigation(); //To navigate back to map screen
+
   if (route.params === undefined) {
     //CHECKING IF THRE IS DATA PASSED
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View style={styles.containerNoData}>
         <Text>Please, select a place in Ireland Map Screen</Text>
       </View>
     );
@@ -17,10 +20,20 @@ export default function DetailScreen({ route }) {
     const { place } = route.params;
 
     return (
-      </*Display information from markers*/>
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+      <>
+        <Button title="back" onPress={() => navigation.goBack()} />
+        <Image
+          source={{
+            uri: `https://picsum.photos/id/${Math.floor(
+              Math.random() * 10
+            )}/200/300`,
+          }}
+          style={{
+            width: "100%",
+            height: "50%",
+          }}
+        />
+        <View style={styles.containerData}>
           <Text>Name: {place.name}</Text>
           <Text>
             Gaelic Name:{" "}
@@ -43,3 +56,15 @@ export default function DetailScreen({ route }) {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  containerNoData: {
+    paddingTop: 50,
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  containerData: {
+    justifyContent: "center",
+  },
+});

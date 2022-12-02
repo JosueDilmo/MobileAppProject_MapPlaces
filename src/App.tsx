@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
 import DetailScreen from "./components/DetailScreen";
@@ -20,7 +20,8 @@ export default function App() {
             ),
           }}
           name="Ireland Map"
-          component={IrelandMapScreen} /*CALLING IrelandMap component*/
+          component={IrelandMapScreen}
+          /*CALLING IrelandMap component*/
         />
 
         <Tab.Screen

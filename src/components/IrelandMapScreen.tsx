@@ -4,7 +4,7 @@ import React from "react";
 import MapView from "react-native-maps";
 import IrelandPlaceMarkers from "./IrelandPlaceMarkers";
 
-// IRELAND MAP OVER DUBLIN W/ IrelandMarkers
+// IRELAND MAP initialRegion DUBLIN
 export default function IrelandMapScreen() {
   return (
     <View style={styles.container}>
@@ -15,7 +15,7 @@ export default function IrelandMapScreen() {
           longitude: -6.266155,
           latitudeDelta: 0.1,
           longitudeDelta: 0.1,
-        }} //IRELANDPLACES COMPONENT -> IRELAND MARKERS
+        }} //IrelandPlaceMarkers will be displayed on this map
       >
         <IrelandPlaceMarkers />
       </MapView>
