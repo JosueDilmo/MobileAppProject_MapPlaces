@@ -12,12 +12,13 @@ export default function DetailScreen({ route }) {
     //CHECKING IF THRE IS DATA PASSED
     return (
       <View style={styles.containerNoData}>
+        <Button title="back" onPress={() => navigation.goBack()} />
         <Text>Please, select a place in Ireland Map Screen</Text>
       </View>
     );
   } else {
     // GETTING DATA PASSED FROM IrelandPlaces/ IrelandMarkers
-    const { place } = route.params;
+    const { marker } = route.params;
 
     return (
       <>
@@ -34,23 +35,23 @@ export default function DetailScreen({ route }) {
           }}
         />
         <View style={styles.containerData}>
-          <Text>Name: {place.name}</Text>
+          <Text>Name: {marker.name}</Text>
           <Text>
             Gaelic Name:{" "}
-            {place.gaelic_name ? place.gaelic_name : "Not available"}
+            {marker.gaelic_name ? marker.gaelic_name : "Not available"}
           </Text>
-          <Text>ID: {place.id}</Text>
-          <Text>Place Type ID: {place.place_type_id}</Text>
+          <Text>ID: {marker.id}</Text>
+          <Text>Place Type ID: {marker.place_type_id}</Text>
           <Text>
             Place Type Name:{" "}
             {
               GetPlaceTypeName(
-                place.place_type_id
+                marker.place_type_id
               ) /*Get name according with ID*/
             }
           </Text>
-          <Text>Latitude: {place.latitude}</Text>
-          <Text>Longitude: {place.longitude}</Text>
+          <Text>Latitude: {marker.latitude}</Text>
+          <Text>Longitude: {marker.longitude}</Text>
         </View>
       </>
     );
@@ -66,5 +67,10 @@ const styles = StyleSheet.create({
   },
   containerData: {
     justifyContent: "center",
+  },
+  image: {
+    width: 100,
+    height: 100,
+    alignSelf: "center",
   },
 });
