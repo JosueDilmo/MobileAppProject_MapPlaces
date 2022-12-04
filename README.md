@@ -70,3 +70,4 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 [Mosh Hamedani - Fetch API](https://programmingwithmosh.com/react-native/make-api-calls-in-react-native-using-fetch/)<br>
 [Unsplash Documentation](https://unsplash.com/documentation)<br>
 [Random Photos website](https://picsum.photos/)<br>
+[Search filter](https://www.youtube.com/watch?v=s542Fe7QBuM)<br>
