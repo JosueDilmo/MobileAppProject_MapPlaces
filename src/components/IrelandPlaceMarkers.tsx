@@ -7,9 +7,10 @@ import GetMarkColor from "../utils/MarkColor";
 const API_PLACES_URL =
   "https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/places.json";
 
-export default function IrelandPlaceMarkers() {
+export default function IrelandPlaceMarkers(props) {
   const [data, setData] = useState([]); // HOLDS PLACE DATA
   const navigation = useNavigation(); // REACT NAVIGATION DOCUMENTATION
+  const { filter } = props;
 
   // FETCH DATA FROM URL AND DISPLAY ON MAP
   useEffect(() => {
@@ -22,28 +23,37 @@ export default function IrelandPlaceMarkers() {
 
   return (
     // RETURN PLACE MARKERS ON MAP
-    data.map((marker, index) => (
-      <Marker
-        key={index}
-        coordinate={{ latitude: marker.latitude, longitude: marker.longitude }}
-        pinColor={GetMarkColor(
-          marker.place_type_id
-        )} /*get color according with place type*/
-      >
-        <Callout
-          onPress={() =>
-            navigation.navigate("Details", { marker: marker })
-          } /*useNavigation to send data to details screen*/
-        >
-          <View>
-            <Text>Name: {marker.name}</Text>
-            <Text>
-              Gaelic Name:{" "}
-              {marker.gaelic_name ? marker.gaelic_name : "Not available"}
-            </Text>
-          </View>
-        </Callout>
-      </Marker>
-    ))
+    <>
+      {data.map((marker, index) => {
+        return marker.place_type_id == filter || filter == 0 ? (
+          <Marker
+            key={index}
+            coordinate={{
+              latitude: marker.latitude,
+              longitude: marker.longitude,
+            }}
+            pinColor={GetMarkColor(
+              marker.place_type_id
+            )} /*get color according with place type*/
+          >
+            <Callout
+              onPress={() =>
+                navigation.navigate("Details", { marker: marker })
+              } /*useNavigation to send data to details screen*/
+            >
+              <View>
+                <Text>Name: {marker.name}</Text>
+                <Text>
+                  Gaelic Name:{" "}
+                  {marker.gaelic_name ? marker.gaelic_name : "Not available"}
+                </Text>
+              </View>
+            </Callout>
+          </Marker>
+        ) : (
+          <React.Fragment key={index}></React.Fragment>
+        );
+      })}
+    </>
   );
 }

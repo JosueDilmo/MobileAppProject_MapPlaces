@@ -1,11 +1,34 @@
 // LOAD IRELAND MAP TO SCREEN
-import { StyleSheet, TextInput, View } from "react-native";
-import React from "react";
+import { StyleSheet, TextInput } from "react-native";
+import React, { useEffect, useState } from "react";
 import MapView from "react-native-maps";
 import IrelandPlaceMarkers from "./IrelandPlaceMarkers";
+import { useNavigation } from "@react-navigation/native";
 
 // IRELAND MAP initialRegion DUBLIN
 export default function IrelandMapScreen() {
+  const navigation = useNavigation();
+  const [search, setSearch] = useState(0);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerLargeTitle: true,
+      headerTitle: "Ireland Map",
+      headerStyle: {
+        backgroundColor: "lightgrey",
+      },
+      headerRight: () => (
+        // SEARCH BAR FOR PLACE TYPES FILTER
+        // MISSING DROPDOWN MENU TO SELECT PLACE TYPES ID
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Search by place type"
+          onChangeText={(text: any) => setSearch(text)}
+        ></TextInput>
+      ),
+    });
+  }, [navigation]);
+
   return (
     <MapView
       style={styles.map}
@@ -16,7 +39,7 @@ export default function IrelandMapScreen() {
         longitudeDelta: 0.1,
       }} //IrelandPlaceMarkers will be displayed on this map
     >
-      <IrelandPlaceMarkers />
+      <IrelandPlaceMarkers filter={search} />
     </MapView>
   );
 }
@@ -29,5 +52,15 @@ const styles = StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject,
+  },
+  searchInput: {
+    alignSelf: "flex-start",
+    alignContent: "center",
+    width: 200,
+    height: 30,
+    backgroundColor: "white",
+    borderWidth: 1,
+    padding: 5,
+    borderBottomColor: "black",
   },
 });
