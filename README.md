@@ -3,7 +3,7 @@
 <br>
 
 ## Individual Project
-
+- Lecture Name: [Saravanabalagi Ramachandran](https://github.com/saravanabalagi)
 - Students Name: `Josue Santos`
 - Student Number: `24061`
   <br><br>
