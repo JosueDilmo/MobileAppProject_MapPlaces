@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
-import { Callout, Marker } from "react-native-maps";
+import MapView, { Callout, Marker } from "react-native-maps";
 import GetMarkColor from "../utils/MarkColor";
 
 const API_PLACES_URL =
@@ -22,8 +22,16 @@ export default function IrelandPlaceMarkers(props) {
   }, []);
 
   return (
-    // RETURN PLACE MARKERS ON MAP
-    <>
+    // Ireland map
+    <MapView
+      style={styles.map}
+      initialRegion={{
+        latitude: 53.35014,
+        longitude: -6.266155,
+        latitudeDelta: 0.1,
+        longitudeDelta: 0.1,
+      }} //IrelandPlaceMarkers will be displayed on this map
+    >
       {data.map((marker, index) => {
         return marker.place_type_id == filter || filter == 0 ? (
           <Marker
@@ -54,6 +62,16 @@ export default function IrelandPlaceMarkers(props) {
           <React.Fragment key={index}></React.Fragment>
         );
       })}
-    </>
+    </MapView>
   );
 }
+// MAP DEFAULT STYLE
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    height: "100%",
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
+});

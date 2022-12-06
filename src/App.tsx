@@ -18,6 +18,7 @@ export default function App() {
             tabBarIcon: ({ color }) => (
               <Icon name="map" size={30} color={color} />
             ),
+            headerStyle: {},
           }}
           name="Ireland Map"
           component={IrelandMapScreen}

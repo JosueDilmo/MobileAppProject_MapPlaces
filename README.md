@@ -30,8 +30,8 @@ The objective of this project is to develop a mobile app to showcase in map plac
 
 - <b>Allow filtering by Place Type </b><br>
 
-  - [ ] Show dropdown for selecting Place Type, default value should be all.<br>
-  - [ ] When a specific Place Type is selected, show only the places with this Place Type on the map.<br>
+  - [x] Show dropdown for selecting Place Type, default value should be all.<br>
+  - [x] When a specific Place Type is selected, show only the places with this Place Type on the map.<br>
 
 - <b>Allow custom marker<br></b>
   - [ ] Long Press anywhere on map to show a draggable marker.<br>
@@ -70,4 +70,5 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 [Mosh Hamedani - Fetch API](https://programmingwithmosh.com/react-native/make-api-calls-in-react-native-using-fetch/)<br>
 [Unsplash Documentation](https://unsplash.com/documentation)<br>
 [Random Photos website](https://picsum.photos/)<br>
-[Search filter](https://www.youtube.com/watch?v=s542Fe7QBuM)<br>
+[Search Filter](https://www.youtube.com/watch?v=s542Fe7QBuM)<br>
+[Dropdown Menu](https://github.com/hoaphantn7604/react-native-element-dropdown)<br>
