@@ -3,6 +3,7 @@
 <br>
 
 ## Individual Project
+
 - Lecture Name: [Saravanabalagi Ramachandran](https://github.com/saravanabalagi)
 - Students Name: `Josue Santos`
 - Student Number: `24061`
@@ -34,7 +35,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
   - [x] When a specific Place Type is selected, show only the places with this Place Type on the map.<br>
 
 - <b>Allow custom marker<br></b>
-  - [ ] Long Press anywhere on map to show a draggable marker.<br>
+  - [x] Long Press anywhere on map to show a draggable marker.<br>
   - [ ] Show distance\*\*\* to the nearest place (from the downloaded data), and on drag marker, update this info.<br>
   - [ ] Draw a semi-transparent blue circle around this marker with a radius of 10 km and show number of places within this radius. <br>
   - [ ] [bonus] Create a slider to control the above radius in km (1-1000, default 10) and on change, update the circle on the map and update number of places within the radius info shown accordingly.<br>
@@ -55,7 +56,7 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 
 \*\*You can hardcode an array of image URLs and randomly load one of them<br>
 
-\*\*\*Use [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to obtain he great-circle Distance between two points on a sphere given their longitudes and latitudes.<br>
+\*\*\*Use [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to obtain the great-circle Distance between two points on a sphere given their longitudes and latitudes.<br>
 
 ## Reference
 
@@ -72,3 +73,4 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 [Random Photos website](https://picsum.photos/)<br>
 [Search Filter](https://www.youtube.com/watch?v=s542Fe7QBuM)<br>
 [Dropdown Menu](https://github.com/hoaphantn7604/react-native-element-dropdown)<br>
+[Circle and draggable mark](https://youtu.be/qlELLikT3FU)<br>

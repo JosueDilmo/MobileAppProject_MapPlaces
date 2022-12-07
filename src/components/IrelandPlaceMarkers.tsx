@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
-import MapView, { Callout, LatLng, Marker } from "react-native-maps";
+import MapView, { Callout, Circle, LatLng, Marker } from "react-native-maps";
 import GetMarkColor from "../utils/MarkColor";
 
 const API_PLACES_URL =
@@ -11,7 +11,11 @@ export default function IrelandPlaceMarkers(props) {
   const [data, setData] = useState([]); // HOLDS PLACE DATA
   const navigation = useNavigation(); // REACT NAVIGATION DOCUMENTATION
   const { filter } = props; // passed by dropdown selection
-  const [newMarker, setNewMarker] = useState({}); // hold data from long press event
+  const [newMarker, setNewMarker] = useState({
+    latitude: 53.35014,
+    longitude: -6.266155,
+  }); // hold data from long press event (obs: Had to set initial value to avoid error)
+  const [placesInRange, setPlacesInRange] = useState({}); // hold data from places in range by circle radius
 
   // FETCH DATA FROM URL AND DISPLAY ON MAP
   useEffect(() => {
@@ -19,23 +23,28 @@ export default function IrelandPlaceMarkers(props) {
       .then((res) => res.json())
       .then((markerLocation) => {
         setData(markerLocation);
+        setPlacesInRange(markerLocation); // setting second data to calculate places in range
       });
   }, []);
   return (
     // Ireland map
-    <MapView onLongPress={e => {
-      setNewMarker({latitute: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude})
-      console.log(newMarker) // TODO: Data logged to console, but not displayed on map
-    }}
+    <MapView
+      onLongPress={(e) => {
+        setNewMarker(e.nativeEvent.coordinate);
+        // console.log(e.nativeEvent.coordinate) first time i long press the map
+        // it was returning object{}, and on the second time was returning the correct coordinates
+        // so i had to set the initial value to avoid error
+      }}
       style={styles.map}
       initialRegion={{
         latitude: 53.35014,
         longitude: -6.266155,
-        latitudeDelta: 0.1,
-        longitudeDelta: 0.1,
+        latitudeDelta: 0.3,
+        longitudeDelta: 0.3,
       }} //IrelandPlaceMarkers will be displayed on this map
     >
-      {data.map((marker, index) => { //map through data and display markers
+      {data.map((marker, index) => {
+        //map through data and display markers
         return marker.place_type_id == filter || filter == 0 ? (
           <Marker
             key={index}
@@ -46,7 +55,7 @@ export default function IrelandPlaceMarkers(props) {
             pinColor={GetMarkColor(
               marker.place_type_id
             )} /*get color according with place type*/
-          > 
+          >
             <Callout
               onPress={() =>
                 navigation.navigate("Details", { marker: marker })
@@ -64,9 +73,30 @@ export default function IrelandPlaceMarkers(props) {
         ) : (
           <React.Fragment key={index}></React.Fragment>
         );
-      })} 
+      })}
+
+      <Marker //marker for long press event
+        coordinate={{
+          latitude: newMarker.latitude,
+          longitude: newMarker.longitude,
+        }}
+        pinColor={"black"}
+        draggable={true}
+        onDragEnd={(e) => {
+          setNewMarker(e.nativeEvent.coordinate);
+        }} //update marker position when dragged
+      ></Marker>
+      <Circle
+        //circle for long press event
+        center={{
+          latitude: newMarker.latitude,
+          longitude: newMarker.longitude,
+        }}
+        radius={10000} //default 10km
+        fillColor={"rgba(255,255,255,0.5)"} //blue fill color with 50% opacity
+      ></Circle>
     </MapView>
-  ); //TODO: add new marker from long press event
+  );
 }
 
 // MAP DEFAULT STYLE
