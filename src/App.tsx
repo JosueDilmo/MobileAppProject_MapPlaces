@@ -22,7 +22,7 @@ export default function App() {
           }}
           name="Ireland Map"
           component={IrelandMapScreen}
-          /*CALLING IrelandMap component*/
+          /*CALLING IrelandMapScreen component*/
         />
 
         <Tab.Screen
@@ -32,7 +32,7 @@ export default function App() {
             ),
           }}
           name="Details"
-          component={DetailScreen} /*CALLING Details component*/
+          component={DetailScreen} /*CALLING DetailScreen component*/
         />
       </Tab.Navigator>
     </NavigationContainer>

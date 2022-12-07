@@ -46,11 +46,11 @@ export default function IrelandMapScreen() {
         />
       ),
     });
-  }, [navigation]);
+  }, [navigation]); //not sure if this is needed (i guess not)
 
   return (
     <IrelandPlaceMarkers
-      filter={search} /*Its filtering the by placetypes by the dropdown */
+      filter={search} /*Its filtering the markers by placetypes by the dropdown */
     />
   );
 }

@@ -11,13 +11,15 @@ export default function DetailScreen({ route }) {
   if (route.params === undefined) {
     //CHECKING IF THRE IS DATA PASSED
     return (
+      <View>
+      <Button title="back" onPress={() => navigation.goBack()} />
       <View style={styles.containerNoData}>
-        <Button title="back" onPress={() => navigation.goBack()} />
         <Text>Please, select a place in Ireland Map Screen</Text>
+      </View>
       </View>
     );
   } else {
-    // GETTING DATA PASSED FROM IrelandPlaces/ IrelandMarkers
+    // GETTING DATA PASSED FROM IrelandPlaceMarkers
     const { marker } = route.params;
 
     return (
@@ -32,7 +34,7 @@ export default function DetailScreen({ route }) {
           style={{
             width: "100%",
             height: "50%",
-          }}
+          }} //TODO: GET IMAGE FROM API (Still figuring out how to display the correct image)
         />
         <View style={styles.containerData}>
           <Text>Name: {marker.name}</Text>
@@ -47,7 +49,7 @@ export default function DetailScreen({ route }) {
             {
               GetPlaceTypeName(
                 marker.place_type_id
-              ) /*Get name according with ID*/
+              ) /*Get place type name according with ID*/
             }
           </Text>
           <Text>Latitude: {marker.latitude}</Text>
@@ -60,8 +62,7 @@ export default function DetailScreen({ route }) {
 
 const styles = StyleSheet.create({
   containerNoData: {
-    paddingTop: 50,
-    flex: 1,
+    paddingTop: "60%",
     alignItems: "center",
     justifyContent: "center",
   },

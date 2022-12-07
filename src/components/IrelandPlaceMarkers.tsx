@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
-import MapView, { Callout, Marker } from "react-native-maps";
+import MapView, { Callout, LatLng, Marker } from "react-native-maps";
 import GetMarkColor from "../utils/MarkColor";
 
 const API_PLACES_URL =
@@ -10,7 +10,8 @@ const API_PLACES_URL =
 export default function IrelandPlaceMarkers(props) {
   const [data, setData] = useState([]); // HOLDS PLACE DATA
   const navigation = useNavigation(); // REACT NAVIGATION DOCUMENTATION
-  const { filter } = props;
+  const { filter } = props; // passed by dropdown selection
+  const [newMarker, setNewMarker] = useState({}); // hold data from long press event
 
   // FETCH DATA FROM URL AND DISPLAY ON MAP
   useEffect(() => {
@@ -20,10 +21,12 @@ export default function IrelandPlaceMarkers(props) {
         setData(markerLocation);
       });
   }, []);
-
   return (
     // Ireland map
-    <MapView
+    <MapView onLongPress={e => {
+      setNewMarker({latitute: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude})
+      console.log(newMarker) // TODO: Data logged to console, but not displayed on map
+    }}
       style={styles.map}
       initialRegion={{
         latitude: 53.35014,
@@ -32,7 +35,7 @@ export default function IrelandPlaceMarkers(props) {
         longitudeDelta: 0.1,
       }} //IrelandPlaceMarkers will be displayed on this map
     >
-      {data.map((marker, index) => {
+      {data.map((marker, index) => { //map through data and display markers
         return marker.place_type_id == filter || filter == 0 ? (
           <Marker
             key={index}
@@ -43,7 +46,7 @@ export default function IrelandPlaceMarkers(props) {
             pinColor={GetMarkColor(
               marker.place_type_id
             )} /*get color according with place type*/
-          >
+          > 
             <Callout
               onPress={() =>
                 navigation.navigate("Details", { marker: marker })
@@ -61,10 +64,11 @@ export default function IrelandPlaceMarkers(props) {
         ) : (
           <React.Fragment key={index}></React.Fragment>
         );
-      })}
+      })} 
     </MapView>
-  );
+  ); //TODO: add new marker from long press event
 }
+
 // MAP DEFAULT STYLE
 const styles = StyleSheet.create({
   container: {
