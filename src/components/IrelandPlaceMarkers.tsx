@@ -23,7 +23,6 @@ export default function IrelandPlaceMarkers(props) {
       .then((res) => res.json())
       .then((markerLocation) => {
         setData(markerLocation);
-        setPlacesInRange(markerLocation); // setting second data to calculate places in range
       });
   }, []);
   return (
@@ -44,9 +43,9 @@ export default function IrelandPlaceMarkers(props) {
       }} //IrelandPlaceMarkers will be displayed on this map
     >
       {data.map((marker, index) => {
-        //map through data and display markers
+        //map through data and display markers or filter according with placetype
         return marker.place_type_id == filter || filter == 0 ? (
-          <Marker
+          <Marker //markers for place data
             key={index}
             coordinate={{
               latitude: marker.latitude,
@@ -86,14 +85,13 @@ export default function IrelandPlaceMarkers(props) {
           setNewMarker(e.nativeEvent.coordinate);
         }} //update marker position when dragged
       ></Marker>
-      <Circle
-        //circle for long press event
+      <Circle //for places in range
         center={{
           latitude: newMarker.latitude,
           longitude: newMarker.longitude,
         }}
         radius={10000} //default 10km
-        fillColor={"rgba(255,255,255,0.5)"} //blue fill color with 50% opacity
+        fillColor={"rgba(0,0,255,0.3)"} //blue fill color with 50% opacity
       ></Circle>
     </MapView>
   );
