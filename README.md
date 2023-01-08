@@ -60,6 +60,8 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 
 ## Report
 
+<i>The .apk file is not working, although the build was successful and in the Expo Go the application is running perfectly, when I downloaded the .apk and installed on my Android phone it is not opening the app.</i><br>
+
 This project was very difficult for me because I’ve never developed in React Native, so I had to search and watch videos about most of the basic things and study in parallel while developing the project. I was able to do most of the requirements and for the ones I couldn’t do I tried hard, and the code can be seen in my repository.<br>
 
 An explanation about the requirements I couldn’t accomplish. In the requirements, second section, the third item is about to load a relevant image using any free service, I tried to use Unsplash but for some reason that I couldn’t figure out it is not loading the correct image, for now it is loading a typing machine image.  The code is available in the repository at <i>Utils> GetPlacePhoto.</i><br>
