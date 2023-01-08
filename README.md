@@ -58,6 +58,19 @@ Bonus requirements do not carry any marks, but will be used to compensate any ma
 
 \*\*\*Use [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to obtain the great-circle Distance between two points on a sphere given their longitudes and latitudes.<br>
 
+## Report
+
+This project was very difficult for me because I’ve never developed in React Native, so I had to search and watch videos about most of the basic things and study in parallel while developing the project. I was able to do most of the requirements and for the ones I couldn’t do I tried hard, and the code can be seen in my repository.<br>
+
+An explanation about the requirements I couldn’t accomplish. In the requirements, second section, the third item is about to load a relevant image using any free service, I tried to use Unsplash but for some reason that I couldn’t figure out it is not loading the correct image, for now it is loading a typing machine image.  The code is available in the repository at [i]Utils> GetPlacePhoto.[/i]<br>
+
+In the last requirements section, I was able to create the draggable marker and the semi-transparent blue circle around it, but when I insert the code to load the places in range, the application got super slow, in a point that I couldn’t even see if it was loading the correct places in range. I remove the code responsible for the places in radius and left just the draggable marker.<br>
+
+It was a fun time and a good learning time developing in React Native even though sometimes it was very frustrating trying to figure out an error, going to the internet and Stack Overflow, for later find out it was a “semicolon or an interrogation mark” that was missing. Jokes a part, developing in React Native made me a bit more focus and brought me attention to the details as I said before, sometimes is just a “silly thing” that is making the application to crash. I enjoyed a lot React Native I hope I can keep learning about it.<br>
+
+In the reference section is the videos and documentation I used for this project and all the code seen is referenced.<br>
+
+
 ## Reference
 
 [React Native Documentation](https://reactnative.dev/docs/getting-started)<br>
